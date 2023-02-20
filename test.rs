@@ -19,7 +19,7 @@ struct Selfie {
 fn mint_selfie(selfie: rocket_contrib::json::Json<Selfie>, signer: Keypair) -> content::Json<String> {
     let selfie = selfie.into_inner();
 
-    let client = SolanaClient::new("https://api.solana.com");
+    let client = SolanaClient::new("https://devnet.solana.com");
     let token_client = TokenClient::new(&client);
 
     let result = match token_client
